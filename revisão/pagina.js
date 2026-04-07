@@ -1,6 +1,6 @@
 function pagina(){
 
-// Define as variavéis que guardam objetos
+    // define as variavéis que guardam objetos
     const titulo = document.createElement("h2");
     titulo.textContent = "Lista de Tarefas";
 
@@ -16,14 +16,14 @@ function pagina(){
     const lista = document.createElement("ul");
     lista.id = "listaTarefas";
 
-// Coloca os elementos no Body
+    // coloca os elementos no Body
     document.body.appendChild(titulo);
     document.body.appendChild(input);
     document.body.appendChild(botao);
     document.body.appendChild(lista);
     
     botao.addEventListener("click", ()=>{
-        //criar novo elemento da lista
+        // criar novo elemento da lista
         const novaTarefa = document.createElement("li");
         const texto = input.value.trim();
 
@@ -32,12 +32,12 @@ function pagina(){
             return;
         }
 
-        novaTarefa.textContent = texto;//adiciona texto ao elemento da lista
-        novaTarefa.classList.add('destaque');//adiciona a classe "destaque" ao li.
-        novaTarefa.setAttribute("data-tarefa", texto.toLowerCase());//adiciona atributo personalizado
-        novaTarefa.style.color = "#333"; //muda a cor do texto
+        novaTarefa.textContent = texto; // adiciona texto ao elemento da lista
+        novaTarefa.classList.add('destaque'); // adiciona a classe "destaque" ao li.
+        novaTarefa.setAttribute("data-tarefa", texto.toLowerCase()); // adiciona atributo personalizado
+        novaTarefa.style.color = "#333"; // muda a cor do texto
 
-        lista.appendChild(novaTarefa);//adicona elemento 
+        lista.appendChild(novaTarefa); // adicona elemento 
 
         novaTarefa.addEventListener("click", ()=>{
             const tarefa = novaTarefa.getAttribute("data-tarefa");
